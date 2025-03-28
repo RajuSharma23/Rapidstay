@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Room Booking Service</h1>
+        <p>Find the perfect stay for your trip.</p>
+    </header>
+    
+    <nav>
+        <a href="#" onclick="showLogin()">Login</a> | <a href="#" onclick="showSignup()">Signup</a>
+    </nav>
+    
+    <section class="auth" id="login-box" style="display: none;">
+        <h2>Login</h2>
+        <input type="text" id="login-email" placeholder="Email">
+        <input type="password" id="login-password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </section>
+    
+    <section class="auth" id="signup-box" style="display: none;">
+        <h2>Signup</h2>
+        <input type="text" id="signup-name" placeholder="Full Name">
+        <input type="email" id="signup-email" placeholder="Email">
+        <input type="password" id="signup-password" placeholder="Password">
+        <button onclick="signup()">Signup</button>
+    </section>
+    
+    <section class="search-box">
+        <input type="date" id="checkin" placeholder="Check-in Date">
+        <input type="date" id="checkout" placeholder="Check-out Date">
+        <button onclick="searchRooms()">Search</button>
+    </section>
+    
+    <section class="rooms" id="rooms">
+        <h2>Available Rooms</h2>
+        <div class="room-list">
+            <!-- Rooms will be displayed here dynamically -->
+        </div>
+    </section>
+    
+    <script>
+        function showLogin() {
+            document.getElementById('login-box').style.display = 'block';
+            document.getElementById('signup-box').style.display = 'none';
+        }
+        function showSignup() {
+            document.getElementById('signup-box').style.display = 'block';
+            document.getElementById('login-box').style.display = 'none';
+        }
+        function login() {
+            alert('Login functionality to be implemented.');
+        }
+        function signup() {
+            alert('Signup functionality to be implemented.');
+        }
+    </script>
+</body>
+</html>
