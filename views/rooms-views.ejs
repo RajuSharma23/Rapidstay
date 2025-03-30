@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Details</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <div class="room-container">
+        <div class="room-gallery">
+            <img id="mainImage" src="<%= room.images[0] %>" alt="Room Image">
+            <div class="thumbnail-container">
+                <% room.images.forEach(image => { %>
+                    <img class="thumbnail" src="<%= image %>" onclick="changeImage('<%= image %>')">
+                <% }) %>
+            </div>
+        </div>
+
+        <div class="room-info">
+            <h2><%= room.title %></h2>
+            <p class="price">$<%= room.price %> / night</p>
+            <p><%= room.description %></p>
+            <ul>
+                <% room.amenities.forEach(amenity => { %>
+                    <li><%= amenity %></li>
+                <% }) %>
+            </ul>
+            <button class="book-btn">Book Now</button>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

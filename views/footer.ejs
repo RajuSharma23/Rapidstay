@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Footer</title>
+    <link rel="stylesheet" href="../css/footer.css">
+    
+</head>
+<body>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>Find the perfect room for your stay. We provide the best rental spaces with affordable pricing and excellent service.</p>
+            </div>
+
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Rooms</a></li>
+                    <li><a href="#">Booking</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p><strong>Email:</strong> support@roombooking.com</p>
+                <p><strong>Phone:</strong> +123 456 7890</p>
+                <p><strong>Address:</strong> 123 Street, City, Country</p>
+            </div>
+
+            <div class="footer-section newsletter">
+                <h2>Subscribe</h2>
+                <form id="subscribe-form">
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p id="message"></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Room Booking. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Set current year in the footer
+            document.getElementById("year").textContent = new Date().getFullYear();
+        
+            // Handle newsletter subscription
+            document.getElementById("subscribe-form").addEventListener("submit", function(event) {
+                event.preventDefault();
+                let email = document.getElementById("email").value;
+                let message = document.getElementById("message");
+        
+                if (email) {
+                    message.style.color = "lightgreen";
+                    message.textContent = "Subscribed successfully!";
+                    this.reset();
+                } else {
+                    message.style.color = "red";
+                    message.textContent = "Please enter a valid email!";
+                }
+            });
+        });
+        
+    </script>
+</body>
+</html>
