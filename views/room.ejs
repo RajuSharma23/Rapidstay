@@ -18,13 +18,13 @@
             <% if (rooms && rooms.length > 0) { %>
                 <% rooms.forEach(room => { %>
                     <div class="room">
-                        <img src="<%= room.image %>" alt="<%= room.type %>">
+                        <img src="<%= room.image || '/images/placeholder.jpg' %>" alt="<%= room.type %>">
                         <h4><%= room.type %></h4>
                         <p class="desc"><%= room.description %></p>
-                        <p class="guests">Up to <%= room.guests %> guests</p>
-                        <p class="size"><%= room.size %></p>
-                        <p class="price">$<%= room.price %> / night</p>
-                        <button class="view-details" data-roomid="<%= room.id %>">View Details →</button>
+                        <p class="guests">Up to <%= room.guests || 2 %> guests</p>
+                        <p class="size"><%= room.size || 'N/A' %></p>
+                        <p class="price">$<%= room.price || 0 %> / night</p>
+                        <button class="view-details" data-roomid="<%= room._id %>">View Details →</button>
                     </div>
                 <% }) %>
             <% } else { %>
