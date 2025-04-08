@@ -13,19 +13,16 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="/" class="nav-item">Home</a></li>
-                <li><a href="/room" class="nav-item">Rooms</a></li>
+                <li><a href="/rooms" class="nav-item">Rooms</a></li>
                 <li><a href="/about" class="nav-item">About</a></li>
                 <li><a href="/services" class="nav-item">Services</a></li>
                 <li><a href="/contact" class="nav-item">Contact</a></li>
+                <li><a href="/login" class="nav-item">Login</a></li>
             </ul>
-            
         </nav>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </header>
     <script>
-        
-
-
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('active');
         }
@@ -36,6 +33,7 @@
                 this.classList.add('active');
             });
         });
+
         //scrolling effect:
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
@@ -45,10 +43,6 @@
                 header.classList.remove('scrolled');
             }
         });
-
-        
-        
-        
     </script>
 </body>
 </html>

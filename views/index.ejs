@@ -15,7 +15,7 @@
         <section class="hero">
             <h1>Find Your Perfect Stay</h1>
             <p>Browse through a variety of rooms available for rent.</p>
-            <a href="" class="btn" onclick="openPopup()">Explore Rooms</a>
+            <a href="/rooms" class="btn">Explore Rooms</a>
         </section>
 
         <section class="container py-12">
@@ -24,7 +24,7 @@
                 <div class="grid-container">
                     <div class="input-group">
                         <label for="check-in">Check-in / Check-out</label>
-                        <input type="text" id="date" class="input" placeholder="Select dates" readonly>
+                        <input type="date" id="date" class="input" placeholder="Select dates">
                     </div>
                     <div class="input-group">
                         <label>Guests</label>
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <div class="button-container">
-                        <button class="search-button">Search Rooms</button>
+                        <button class="search-button" onclick="searchRooms()">Search Rooms</button>
                     </div>
                 </div>
             </div>
@@ -81,157 +81,8 @@
                 <button class="book-now">Book Now</button>
             </div>
         </div>
-        <div class="card">
-            <div class="image-container">
-                <img src="../image/login-banner-3.jpg" alt="Family Room" class="image" />
-            </div>
-            <div class="card-content">
-                <div class="header">
-                    <h3 class="title">Family Room</h3>
-                    <div class="rating">
-                        <span class="star">&#9733;</span>
-                        <span class="rating-value">4.8</span>
-                    </div>
-                </div>
-                <div class="location">
-                    <span class="icon">📍</span> Garden View
-                </div>
-                <p class="description">Spacious room with two queen beds, perfect for families with children.</p>
-                <div class="features">
-                    <span class="feature"><span class="icon">📶</span> Free WiFi</span>
-                    <span class="feature"><span class="icon">☕</span> Breakfast</span>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <div class="card-footer">
-                <div class="price">
-                    <span class="amount">$279</span>
-                    <span class="per-night"> / night</span>
-                </div>
-                <button class="book-now">Book Now</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="image-container">
-                <img src="../image/login-banner.jpg" alt="Family Room" class="image" />
-            </div>
-            <div class="card-content">
-                <div class="header">
-                    <h3 class="title">Family Room</h3>
-                    <div class="rating">
-                        <span class="star">&#9733;</span>
-                        <span class="rating-value">4.8</span>
-                    </div>
-                </div>
-                <div class="location">
-                    <span class="icon">📍</span> Garden View
-                </div>
-                <p class="description">Spacious room with two queen beds, perfect for families with children.</p>
-                <div class="features">
-                    <span class="feature"><span class="icon">📶</span> Free WiFi</span>
-                    <span class="feature"><span class="icon">☕</span> Breakfast</span>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <div class="card-footer">
-                <div class="price">
-                    <span class="amount">$279</span>
-                    <span class="per-night"> / night</span>
-                </div>
-                <button class="book-now">Book Now</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="image-container">
-                <img src="../image/login-banner.jpg" alt="Family Room" class="image" />
-            </div>
-            <div class="card-content">
-                <div class="header">
-                    <h3 class="title">Family Room</h3>
-                    <div class="rating">
-                        <span class="star">&#9733;</span>
-                        <span class="rating-value">4.8</span>
-                    </div>
-                </div>
-                <div class="location">
-                    <span class="icon">📍</span> Garden View
-                </div>
-                <p class="description">Spacious room with two queen beds, perfect for families with children.</p>
-                <div class="features">
-                    <span class="feature"><span class="icon">📶</span> Free WiFi</span>
-                    <span class="feature"><span class="icon">☕</span> Breakfast</span>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <div class="card-footer">
-                <div class="price">
-                    <span class="amount">$279</span>
-                    <span class="per-night"> / night</span>
-                </div>
-                <button class="book-now">Book Now</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="image-container">
-                <img src="../image/login-banner-2.jpg" alt="Family Room" class="image" />
-            </div>
-            <div class="card-content">
-                <div class="header">
-                    <h3 class="title">Family Room</h3>
-                    <div class="rating">
-                        <span class="star">&#9733;</span>
-                        <span class="rating-value">4.8</span>
-                    </div>
-                </div>
-                <div class="location">
-                    <span class="icon">📍</span> Garden View
-                </div>
-                <p class="description">Spacious room with two queen beds, perfect for families with children.</p>
-                <div class="features">
-                    <span class="feature"><span class="icon">📶</span> Free WiFi</span>
-                    <span class="feature"><span class="icon">☕</span> Breakfast</span>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <div class="card-footer">
-                <div class="price">
-                    <span class="amount">$279</span>
-                    <span class="per-night"> / night</span>
-                </div>
-                <button class="book-now">Book Now</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="image-container">
-                <img src="../image/login-banner-3.jpg" alt="Family Room" class="image" />
-            </div>
-            <div class="card-content">
-                <div class="header">
-                    <h3 class="title">Family Room</h3>
-                    <div class="rating">
-                        <span class="star">&#9733;</span>
-                        <span class="rating-value">4.8</span>
-                    </div>
-                </div>
-                <div class="location">
-                    <span class="icon">📍</span> Garden View
-                </div>
-                <p class="description">Spacious room with two queen beds, perfect for families with children.</p>
-                <div class="features">
-                    <span class="feature"><span class="icon">📶</span> Free WiFi</span>
-                    <span class="feature"><span class="icon">☕</span> Breakfast</span>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <div class="card-footer">
-                <div class="price">
-                    <span class="amount">$279</span>
-                    <span class="per-night"> / night</span>
-                </div>
-                <button class="book-now">Book Now</button>
-            </div>
-        </div>
+        
+        
         
     </section>
     <div class="view-rooms">
@@ -415,5 +266,32 @@
         </div>
     </section>
     <%- include('footer') %>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize date picker with current date
+            document.getElementById('date').valueAsDate = new Date();
+            
+            // Make book now buttons work
+            document.querySelectorAll('.book-now').forEach(button => {
+                button.addEventListener('click', function() {
+                    const roomTitle = this.closest('.card').querySelector('.title').textContent;
+                    window.location.href = `/booking?room=${encodeURIComponent(roomTitle)}`;
+                });
+            });
+            
+            // Make view all rooms button work
+            document.querySelector('.view-rooms button').addEventListener('click', function() {
+                window.location.href = '/rooms';
+            });
+        });
+        
+        function searchRooms() {
+            const date = document.getElementById('date').value;
+            const adults = document.querySelector('.guest-selection select:first-child').value;
+            const children = document.querySelector('.guest-selection select:last-child').value;
+            
+            window.location.href = `/rooms?date=${date}&adults=${adults}&children=${children}`;
+        }
+    </script>
 </body>
 </html>

@@ -29,7 +29,7 @@ const roomSchema = new mongoose.Schema({
 
 const Room = mongoose.model("Room", roomSchema);
 
-// Add this after your Room model definition to seed initial data
+// Seed initial data
 async function seedRooms() {
     try {
         const count = await Room.countDocuments();
@@ -56,8 +56,7 @@ async function seedRooms() {
                     location: 'Garden View',
                     amenities: ['2 Queen Beds', 'Kitchenette', 'WiFi'],
                     rating: 4.5
-                },
-                
+                }
             ];
             await Room.insertMany(sampleRooms);
             console.log('Sample rooms added to database');
@@ -67,17 +66,43 @@ async function seedRooms() {
     }
 }
 
-// Call the seed function when the app starts
 mongoose.connection.once('open', () => {
     console.log('MongoDB connected');
     seedRooms();
 });
 
 // Basic Routes
-app.get('/', (req, res) => res.render('index'));
+app.get('/', (req, res) => {
+    try {
+        res.render("index");
+    } catch (err) {
+        console.error("Error rendering index:", err);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
 app.get('/about', (req, res) => res.render('about'));
 app.get('/services', (req, res) => res.render('services'));
 app.get('/contact', (req, res) => res.render('contact'));
+
+// Login Route - FIXED
+app.get('/login', (req, res) => {
+    try {
+        console.log("Rendering login page");
+        res.render('login');
+    } catch (err) {
+        console.error("Error rendering login page:", err);
+        res.status(500).send("Internal Server Error: " + err.message);
+    }
+});
+
+// Login form submission
+app.post('/login', (req, res) => {
+    const { username, password } = req.body;
+    console.log("Login attempt:", username);
+    // Here you would add authentication logic
+    res.redirect('/');
+});
 
 // Room Routes
 app.get('/rooms', async (req, res) => {
@@ -87,17 +112,6 @@ app.get('/rooms', async (req, res) => {
     } catch (err) {
         console.error('Error fetching rooms:', err);
         res.render('room', { rooms: [] });
-    }
-});
-
-// Route to Render Rooms Page
-app.get("/", async (req, res) => {
-    try {
-        const rooms = await Room.find();
-        res.render("", { rooms });
-    } catch (err) {
-        console.error("Database error:", err);
-        res.status(500).send("Internal Server Error");
     }
 });
 
@@ -132,6 +146,11 @@ app.get("/room/:id", async (req, res) => {
         console.error("Database error:", err);
         res.status(500).send("Internal Server Error");
     }
+});
+
+// Error handling middleware
+app.use((req, res) => {
+    res.status(404).send("Page not found");
 });
 
 const PORT = process.env.PORT || 3000;

@@ -1,3 +1,6 @@
+const express = require('express');
+const router = express.Router();
+
 router.get('/login', (req, res) => {
     res.render('login', {
         phoneNumber: req.query.phoneNumber || '',
@@ -5,3 +8,9 @@ router.get('/login', (req, res) => {
         isLoading: false
     });
 });
+
+router.post('/login', (req, res) => {
+    // Authentication logic
+});
+
+module.exports = router;
